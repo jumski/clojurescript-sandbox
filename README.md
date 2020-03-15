@@ -23,7 +23,7 @@ npx shadow-cljs watch app
 Connecting vim-fireplace repl is kinda quirky for now, this instructions
 are based on [this comment @ tpope/vim-fireplace #322](https://github.com/tpope/vim-fireplace/issues/322#issuecomment-417461929):
 
-1. Connect to the nREPL server :Connect (you can get port from `.shadow-cljs/nrepl-port`)
+1. Connect to the nREPL server :Connect (nrepl port is set to `4444`)
 1. Upgrade REPL to a CLJS REPL :Piggieback :app (converts the clojure repl to a clojurescript repl)
 1. Open web page in a web browser (or any other trick which jits the clojurescript into the app)
 1. At this point calls to Eval will work
