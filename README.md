@@ -28,3 +28,8 @@ are based on [this comment @ tpope/vim-fireplace #322](https://github.com/tpope/
 1. Open web page in a web browser (or any other trick which jits the clojurescript into the app)
 1. At this point calls to Eval will work
 
+### `Build failure: The required namespace "cljs.user" is not available.`
+
+This is error that pops up after evaluating any code in vim-fireplace and it persistes
+for the shadow-cljs seseion until restarted, rendering shadow-cljs+fireplace combo
+unusable for time being, see: https://github.com/thheller/shadow-cljs/issues/667
