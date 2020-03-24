@@ -9,7 +9,7 @@ Install `shadow-cljs` and npm deps for the project.
 
 ```
 yarn global add shadow-cljs
-shadow-cljs npm-deps
+npx shadow-cljs npm-deps
 ```
 
 ## Running
