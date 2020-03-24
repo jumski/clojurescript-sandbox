@@ -1,7 +1,6 @@
 (ns ^:dev/always app.main
   (:require [reagent.core :as r]
-            [reagent.dom :as rdom]
-            [cljs.user :as cljsuser]))
+            [reagent.dom :as rdom]))
 
 ; defonce so we do not lose state when hot reloading
 (defonce rows-num (r/atom 5))
