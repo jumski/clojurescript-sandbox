@@ -4,4 +4,7 @@
  :builds {:app {:target :browser
                 :output-dir "public/js"
                 :asset-path "/js"
+                :main app.main/main!
+                :devtools {:after-load app.main/reload!
+                           :repl-init-ns app.main}
                 :modules {:main {:init-fn app.main/main!}}}}}

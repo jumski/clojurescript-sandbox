@@ -1,10 +1,16 @@
 (ns ^:dev/always app.main
   (:require [reagent.core :as r]
-            [reagent.dom :as rdom]))
+            [reagent.dom :as rdom]
+            [cljs.user :as cljsuser]))
 
 ; defonce so we do not lose state when hot reloading
 (defonce rows-num (r/atom 5))
 (defonce cols-num (r/atom 5))
+
+(comment
+  (swap! cols-num dec)
+  (swap! cols-num inc)
+  )
 
 (defn create-cols [num body-fn]
   (for [i (range num)]
@@ -23,17 +29,15 @@
 
 (defn ui []
   [:div
-   [:div "rows " [button "+" #(swap! rows-num inc)] "/" [button "-" #(swap! rows-num dec)]],
-   [:div "cols " [button "+" #(swap! cols-num inc)] "/" [button "-" #(swap! cols-num dec)]]
+   [:div "xx " [button "+" #(swap! rows-num inc)] "/" [button "-" #(swap! rows-num dec)]],
+   [:div "yx " [button "+" #(swap! cols-num inc)] "/" [button "-" #(swap! cols-num dec)]]
    [table]])
 
 (defn render-ui []
   (let [dom-node (js/document.getElementById "app")]
     (rdom/render [ui] dom-node)))
 
-(defn ^{:export true
-        :dev/after-load true}
-  start []
+(defn ^:export reload! []
   (render-ui))
 
 (def ^:export main! render-ui)
