@@ -28,8 +28,8 @@
 
 (defn ui []
   [:div
-   [:div "xx " [button "+" #(swap! rows-num inc)] "/" [button "-" #(swap! rows-num dec)]],
-   [:div "yx " [button "+" #(swap! cols-num inc)] "/" [button "-" #(swap! cols-num dec)]]
+   [:div [button "+" #(swap! rows-num inc)] "/" [button "-" #(swap! rows-num dec)]],
+   [:div [button "+" #(swap! cols-num inc)] "/" [button "-" #(swap! cols-num dec)]]
    [table]])
 
 (defn render-ui []
