@@ -6,6 +6,5 @@
                 :output-dir "public/js"
                 :asset-path "/js"
                 :main app.main/main!
-                :devtools {:after-load app.main/reload!
-                           :repl-init-ns cljs.user}
+                :devtools {:after-load app.main/reload!}
                 :modules {:main {:init-fn app.main/main!}}}}}
